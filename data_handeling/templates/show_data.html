@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h1>Server Data</h1><table border="1px"><hr/>
+    <thead>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>City</th>
+    <th>Number</th>
+    <th>Action</th>
+    </thead>
+    {%for i in data%}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.age}}</td>
+        <td>{{i.city}}</td>
+        <td>{{i.number}}</td>
+        <td><a href="/update/{{i.id}}">Update</a>
+        <a href="/delete/{{i.id}}">Delete</a></td>
+    </tr>
+{%endfor%}
+</table>
+<a href="/form">insert</a></td>
+<a href="/accounts/logout/">log out</a></td>
+</center>
+
+</body>
+</html>

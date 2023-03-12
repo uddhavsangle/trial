@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center> {%if form%}<h1>Form</h1>
+    <form method="post">
+
+    {{form.as_p}}
+    {%csrf_token%}
+    <input type="submit">
+
+</form>
+    {%elif obj%}
+    <form method="POST">
+
+        <h1>Update Form</h1>
+        <p>Name::<input type="text" name="name" value="{{obj.name}}"></p>
+        <p>Age::<input type="text"  name="age" value="{{obj.age}}"></p>
+        <p>City::<input type="text" name="city" value="{{obj.city}}"></p>
+        <p>Number::<input type="text" name="number" value="{{obj.number}}"></p>
+        {%csrf_token%}
+        <input type="submit">
+
+    </form>
+    {%endif%}
+</center>
+
+</body>
+</html>
